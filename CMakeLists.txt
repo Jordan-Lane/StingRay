@@ -3,4 +3,4 @@ project(StingRay)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(StingRay main.cpp)
+add_executable(StingRay src/main.cpp)

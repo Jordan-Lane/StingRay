@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,clion,git,c++,cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,clion,git,c++,cmake
 
+### Project Specific ###
+lib/*
+
 ### C++ ###
 # Prerequisites
 *.d
