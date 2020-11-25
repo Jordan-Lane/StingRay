@@ -61,7 +61,7 @@ class vec3 {
         double e[3];
 };
 
-using point = vec3;
+using point3 = vec3;
 using color = vec3;
 
 inline std::ostream& operator<<(std::ostream &out, vec3 &v){
