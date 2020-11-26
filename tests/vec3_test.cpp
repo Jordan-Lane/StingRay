@@ -46,6 +46,13 @@ TEST_F(Vec3Test, VectorSubtraction){
     ASSERT_EQ(result_vec, expected_vec);
 }
 
+TEST_F(Vec3Test, NegativeVector){
+    vec3 result_vec = -test_vec1;
+    vec3 expected_vec = vec3(-1, -2, -3);
+
+    ASSERT_EQ(result_vec, expected_vec);
+}
+
 TEST_F(Vec3Test, VectorScalarMultiplication){
     vec3 expected_vec = vec3(2, 4, 6);
 
