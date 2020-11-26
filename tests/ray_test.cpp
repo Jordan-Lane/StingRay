@@ -20,6 +20,6 @@ TEST_F(RayTest, RayCreation_Test){
 
 TEST_F(RayTest, RayAtT){
     ASSERT_EQ(test_ray1.at(0), vec3(0, 0, 0));
-    ASSERT_EQ(test_ray1.at(1), vec3(1, 2, 3));
-    ASSERT_EQ(test_ray1.at(-1), vec3(-1, -2, -3));
+    ASSERT_EQ(test_ray1.at(10), vec3(10, 20, 30));
+    ASSERT_EQ(test_ray1.at(-10), vec3(-10, -20, -30));
 }
