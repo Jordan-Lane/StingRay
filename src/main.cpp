@@ -18,7 +18,10 @@ color cast_ray(const ray &r, const hittable& world, int depth) {
     }
 
     if(world.hit(r, 0.001, infinity, record)){
-        point3 target = record.p + random_in_hemisphere(record.normal);
+
+        //point3 target = record.p + record.normal + random_unit_vector();   // Lambertian reflection
+        point3 target = record.p + random_in_hemisphere(record.normal);      // Hemispherical reflection
+
         return 0.5 * cast_ray(ray(record.p, target - record.p), world, depth - 1);
     }
 
