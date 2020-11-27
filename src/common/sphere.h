@@ -16,6 +16,7 @@ class sphere : public hittable {
         double radius;
 };
 
+// TODO: REVIEW THE VECTOR MATH BEHIND THIS INTERSECTION
 bool sphere::hit(const ray &ray, double t_min, double t_max, hit_record &record) const {
     vec3 oc = ray.origin() - center;
 

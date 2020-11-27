@@ -8,7 +8,8 @@
 #include "sphere.h"
 
 
-color ray_color(const ray &r, const hittable& world, int depth) {
+// previously known as ray_color
+color cast_ray(const ray &r, const hittable& world, int depth) {
     hit_record record;
 
     // Ray bounce limit - no more light is gathered
@@ -18,7 +19,7 @@ color ray_color(const ray &r, const hittable& world, int depth) {
 
     if(world.hit(r, 0.001, infinity, record)){
         point3 target = record.p + random_in_hemisphere(record.normal);
-        return 0.5 * ray_color(ray(record.p, target - record.p), world, depth-1);
+        return 0.5 * cast_ray(ray(record.p, target - record.p), world, depth - 1);
     }
 
     vec3 unit_direction = unit_vector(r.direction());
@@ -59,7 +60,7 @@ int main() {
                 auto v = (j + random_double()) / (image_height - 1);
 
                 ray r = cam.get_ray(u, v);
-                pixel_color += ray_color(r, world, max_depth);
+                pixel_color += cast_ray(r, world, max_depth);
             }
             write_color(std::cout, pixel_color, samples_per_pixel);
         }
