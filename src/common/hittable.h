@@ -4,7 +4,7 @@
 #include "ray.h"
 
 struct hit_record {
-    point3 point;
+    point3 p;
     vec3 normal;
     double t;
     bool is_front_facing;
