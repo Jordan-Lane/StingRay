@@ -7,13 +7,15 @@
 class sphere : public hittable {
     public:
         sphere() {}
-        sphere(point3 center_point, double r) : center(center_point), radius(r) {};
+        sphere(point3 center_point, double r, shared_ptr<material> mat)
+            : center(center_point), radius(r), mat_ptr(mat) {};
 
         virtual bool hit(const ray &r, double t_min, double t_max, hit_record &record) const override;
 
     public:
         point3 center;
         double radius;
+        shared_ptr<material> mat_ptr;
 };
 
 // TODO: REVIEW THE VECTOR MATH BEHIND THIS INTERSECTION
@@ -40,6 +42,7 @@ bool sphere::hit(const ray &ray, double t_min, double t_max, hit_record &record)
 
     record.t = root;
     record.p = ray.at(root);
+    record.mat_ptr = mat_ptr;
 
     vec3 outward_normal = (record.p - center) / radius;
     record.set_face_normal(ray, outward_normal);
