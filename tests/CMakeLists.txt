@@ -8,8 +8,10 @@ project(tests)
 add_subdirectory(googletest)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
+target_include_directories(CommonSR INTERFACE /src/common/)
+
 # 'tests_run' is the target name
 add_executable(tests_run vec3_test.cpp ray_test.cpp)
-target_link_libraries(tests_run gtest gtest_main CommonSR)
+target_link_libraries(tests_run CommonSR gtest gtest_main)
 
 

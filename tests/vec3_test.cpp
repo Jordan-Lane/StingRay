@@ -1,7 +1,5 @@
 #include "gtest/gtest.h"
-#include "vec3.h"
-
-// GTest Primer: https://github.com/google/googletest/blob/master/googletest/docs/primer.md
+#include "stingray_util.h"
 
 class Vec3Test: public ::testing::Test {
     protected:

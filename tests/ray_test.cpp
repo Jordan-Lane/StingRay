@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "ray.h"
+#include "stingray_util.h"
 
 class RayTest : public::testing::Test {
     protected:
