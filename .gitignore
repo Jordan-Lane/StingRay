@@ -4,6 +4,7 @@
 
 ### Project Specific ###
 lib/*
+bin/*
 
 ### C++ ###
 # Prerequisites
